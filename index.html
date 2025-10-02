@@ -236,7 +236,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
             z-index: -1;
         }
 
@@ -465,6 +465,28 @@
             height: 400px;
             border: none;
         }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 1rem;
+            margin: 2rem auto;
+            border-radius: 10px;
+        }
+
+        .testimonial {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            margin-top: 1rem;
+            font-weight: bold;
+            font-style: normal;
+        }
     </style>
 </head>
 <body>
@@ -478,8 +500,7 @@
         <nav id="mainNav">
             <a href="#ueber-uns">Über uns</a>
             <a href="#leistungen">Leistungen</a>
-            <a href="#bekleidung">Bekleidung</a>
-            <a href="#fahrzeuge">Fahrzeuge</a>
+            <a href="#referenzen">Referenzen</a>
             <a href="#kontakt">Kontakt</a>
         </nav>
         <button class="hamburger" id="hamburger">☰</button>
@@ -490,9 +511,9 @@
     <section id="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <h2>Schöne Gärten. Nachhaltige Landschaften.</h2>
-            <p>Professioneller Garten- und Landschaftsbau — Planung, Pflege und Gestaltung in Kiel und Umgebung.</p>
-            <a href="#kontakt" class="btn">Jetzt anfragen</a>
+            <h2>Ihr Partner für grüne Träume</h2>
+            <p>Professioneller Garten- und Landschaftsbau in Kiel — Von der Planung bis zur fertigen Gestaltung</p>
+            <a href="#kontakt" class="btn">Kostenloses Angebot anfordern</a>
         </div>
     </section>
 
@@ -500,12 +521,12 @@
         <h2>Über uns</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Seit über 15 Jahren gestalten wir nachhaltige und ästhetische Gärten und Außenanlagen in Kiel und Umgebung. Unser Team aus erfahrenen Gärtnern und Landschaftsbauern verbindet handwerkliches Können mit kreativer Gestaltung.</p>
-                <p>Wir legen Wert auf qualitativ hochwertige Materialien, ökologische Nachhaltigkeit und individuelle Lösungen für jeden Kunden. Von der Planung bis zur fertigen Umsetzung begleiten wir Ihr Projekt mit Fachkompetenz und Leidenschaft.</p>
-                <a href="#kontakt" class="btn">Kostenlose Beratung anfordern</a>
+                <p>Seit über 15 Jahren gestalten wir einzigartige Gärten und Außenanlagen in Kiel und Umgebung. Unser Team aus erfahrenen Landschaftsgärtnern verbindet handwerkliche Präzision mit kreativer Gestaltung.</p>
+                <p>Wir setzen auf nachhaltige Materialien, standortgerechte Bepflanzung und individuelle Lösungen, die perfekt zu Ihrem Lebensstil passen. Von der ersten Beratung bis zur fertigen Umsetzung begleiten wir Ihr Projekt mit Leidenschaft und Fachkompetenz.</p>
+                <a href="#kontakt" class="btn">Vereinbaren Sie ein Beratungsgespräch</a>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-16005861162ee6d5b41e6bfa83b9b4b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Unser Team bei der Arbeit">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Unser Team bei der Gartenarbeit">
             </div>
         </div>
     </section>
@@ -514,55 +535,45 @@
         <h2>Unsere Leistungen</h2>
         <div class="grid grid-3">
             <div class="card fade-in">
-                <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gartenpflege">
-                <h3>Gartenpflege</h3>
-                <p>Rasenpflege, Hecken schneiden, Pflegekonzepte für Privatgärten und Gewerbeanlagen.</p>
+                <img src="https://images.unsplash.com/photo-1578309851877-65a4667a69de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gartenpflege">
+                <h3>Gartenpflege & -wartung</h3>
+                <p>Regelmäßige Rasenpflege, Heckenschnitt, Gehölzschnitt und ganzjährige Gartenbetreuung für Privatgärten und Gewerbeanlagen.</p>
             </div>
             <div class="card fade-in">
                 <img src="https://images.unsplash.com/photo-1626171875780-3c8ccb3916c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Anlagenbau">
-                <h3>Anlagenbau</h3>
-                <p>Wegebau, Terrassen, Pflasterarbeiten, Mauerbau und Gartenbeleuchtung.</p>
+                <h3>Garten- & Landschaftsbau</h3>
+                <p>Terassengestaltung, Wegebau, Pflasterarbeiten, Mauerbau, Teichbau und komplette Neuanlagen nach Ihren Wünschen.</p>
             </div>
             <div class="card fade-in">
                 <img src="https://images.unsplash.com/photo-1598981454605-bf381e8d1d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bepflanzung">
-                <h3>Bepflanzung</h3>
-                <p>Stauden, Hecken, Baumpflanzung und artgerechte Pflege für ein gesundes Pflanzenwachstum.</p>
+                <h3>Pflanzplanung & -ausführung</h3>
+                <p>Individuelle Pflanzkonzepte, Staudenpflanzungen, Hecken, Bäume und artgerechte Pflege für gesundes Wachstum.</p>
             </div>
         </div>
     </section>
 
-    <section id="bekleidung">
-        <h2>Arbeits- & Freizeitbekleidung</h2>
-        <div class="grid grid-3">
-            <figure class="fade-in">
-                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Arbeitsjacke">
-                <figcaption>Funktionale Arbeitsjacken</figcaption>
-            </figure>
-            <figure class="fade-in">
-                <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1972&q=80" alt="Arbeitshose">
-                <figcaption>Robuste Arbeitshosen</figcaption>
-            </figure>
-            <figure class="fade-in">
-                <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Schutzausrüstung">
-                <figcaption>Sicherheitsausrüstung</figcaption>
-            </figure>
+    <section id="referenzen">
+        <h2>Kundenstimmen</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"Das Team von Garten & Landschaftsbau DF hat unseren Garten in eine wahre Oase verwandelt. Die Beratung war kompetent, die Umsetzung professionell und das Ergebnis übertrifft alle Erwartungen!"</p>
+                <div class="testimonial-author">- Familie Schmidt, Kiel</div>
+            </div>
         </div>
-    </section>
-
-    <section id="fahrzeuge">
-        <h2>Unsere Fahrzeugflotte</h2>
+        
+        <h2 style="margin-top: 4rem;">Unsere Projekte</h2>
         <div class="grid grid-3">
             <figure class="fade-in">
-                <img src="https://images.unsplash.com/photo-1632852908806-57d28176d1b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Transporter">
-                <figcaption>Mercedes Transporter</figcaption>
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Moderner Vorgarten">
+                <figcaption>Moderner Vorgarten</figcaption>
             </figure>
             <figure class="fade-in">
-                <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Traktor">
-                <figcaption>Traktor & Spezialfahrzeuge</figcaption>
+                <img src="https://images.unsplash.com/photo-1578309850417-0a6c047c9d0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Naturgarten">
+                <figcaption>Naturnaher Garten</figcaption>
             </figure>
             <figure class="fade-in">
-                <img src="https://images.unsplash.com/photo-1571781926260-7a7e08b14ed0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Anhänger">
-                <figcaption>Pflanzenanhänger</figcaption>
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Terrassengestaltung">
+                <figcaption>Terrassengestaltung</figcaption>
             </figure>
         </div>
     </section>
@@ -572,10 +583,11 @@
         <form id="contactForm">
             <input type="text" name="name" placeholder="Ihr Name" required>
             <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
-            <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
+            <input type="tel" name="phone" placeholder="Ihre Telefonnummer">
+            <textarea name="message" rows="5" placeholder="Beschreiben Sie Ihr Projekt..." required></textarea>
             <button type="submit" class="btn" id="submitBtn">
                 <span class="loading" id="loadingIcon" style="display: none;"></span>
-                <span id="submitText">Nachricht senden</span>
+                <span id="submitText">Anfrage senden</span>
             </button>
             <div id="formMessage"></div>
         </form>
@@ -583,6 +595,7 @@
             <p><strong>Adresse:</strong> Reingeguckt Str. 187, 24145 Kiel</p>
             <p><strong>Telefon:</strong> <a href="tel:+491711234567">+49 171 1234567</a></p>
             <p><strong>E-Mail:</strong> <a href="mailto:info@dannyfojut.de">info@dannyfojut.de</a></p>
+            <p><strong>Öffnungszeiten:</strong> Mo-Fr 8:00-18:00 | Sa 9:00-14:00</p>
         </div>
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2326.123456789012!2d10.12345678901234!3d54.3210987654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTTCsDE5JzE2LjAiTiAxMMKwMDcnMjguNCJF!5e0!3m2!1sde!2sde!4v1234567890123!5m2!1sde!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -591,7 +604,7 @@
 </main>
 
 <footer>
-    <p>© 2025 Garten & Landschaftsbau bei DF | Reingeguckt Str. 187, 24145 Kiel</p>
+    <p>© 2025 Garten & Landschaftsbau bei DF | Reingeguckt Str. 187, 24145 Kiel | Tel: +49 171 1234567</p>
 </footer>
 
 <script>
@@ -663,11 +676,11 @@
             
             // Hide loading state
             loadingIcon.style.display = 'none';
-            submitText.textContent = 'Nachricht senden';
+            submitText.textContent = 'Anfrage senden';
             submitBtn.disabled = false;
             
             // Show success message
-            formMessage.textContent = 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.';
+            formMessage.textContent = 'Vielen Dank für Ihre Anfrage! Wir melden uns innerhalb von 24 Stunden bei Ihnen.';
             formMessage.className = 'success';
             
             // Hide message after 5 seconds
@@ -693,6 +706,20 @@
                     behavior: 'smooth'
                 });
             }
+        });
+    });
+
+    // Add some interactive elements
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add random rotation to cards on hover
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = `translateY(-10px) rotate(${Math.random() * 2 - 1}deg)`;
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) rotate(0deg)';
+            });
         });
     });
 </script>
