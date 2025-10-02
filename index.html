@@ -487,6 +487,41 @@
             font-weight: bold;
             font-style: normal;
         }
+
+        /* Testimonial Grid */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-rating {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-name {
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .testimonial-location {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -526,7 +561,7 @@
                 <a href="#kontakt" class="btn">Vereinbaren Sie ein Beratungsgespräch</a>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Unser Team bei der Gartenarbeit">
+                <img src="https://images.unsplash.com/photo-16005861162ee6d5b41e6bfa83b9b4b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Unser Team bei der Gartenarbeit">
             </div>
         </div>
     </section>
@@ -535,7 +570,7 @@
         <h2>Unsere Leistungen</h2>
         <div class="grid grid-3">
             <div class="card fade-in">
-                <img src="https://images.unsplash.com/photo-1578309851877-65a4667a69de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gartenpflege">
+                <img src="https://images.unsplash.com/photo-1578309850417-0a6c047c9d0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gartenpflege">
                 <h3>Gartenpflege & -wartung</h3>
                 <p>Regelmäßige Rasenpflege, Heckenschnitt, Gehölzschnitt und ganzjährige Gartenbetreuung für Privatgärten und Gewerbeanlagen.</p>
             </div>
@@ -554,10 +589,24 @@
 
     <section id="referenzen">
         <h2>Kundenstimmen</h2>
-        <div class="testimonials">
-            <div class="testimonial">
-                <p>"Das Team von Garten & Landschaftsbau DF hat unseren Garten in eine wahre Oase verwandelt. Die Beratung war kompetent, die Umsetzung professionell und das Ergebnis übertrifft alle Erwartungen!"</p>
-                <div class="testimonial-author">- Familie Schmidt, Kiel</div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Das Team von Garten & Landschaftsbau DF hat unseren Garten in eine wahre Oase verwandelt. Die Beratung war kompetent, die Umsetzung professionell und das Ergebnis übertrifft alle Erwartungen!"</p>
+                <div class="testimonial-name">Familie Schmidt</div>
+                <div class="testimonial-location">Kiel</div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Super Service! Die Terrasse wurde pünktlich und in bester Qualität fertiggestellt. Wir sind absolut begeistert und können DF nur weiterempfehlen!"</p>
+                <div class="testimonial-name">Thomas Weber</div>
+                <div class="testimonial-location">Kronshagen</div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Endlich ein zuverlässiger Partner für unsere Gartenpflege! Seit zwei Jahren kümmern sie sich um unseren großen Garten und wir sind jedes Mal aufs Neue begeistert."</p>
+                <div class="testimonial-name">Sabine Müller</div>
+                <div class="testimonial-location">Kiel-Friedrichsort</div>
             </div>
         </div>
         
@@ -572,7 +621,7 @@
                 <figcaption>Naturnaher Garten</figcaption>
             </figure>
             <figure class="fade-in">
-                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Terrassengestaltung">
+                <img src="https://images.unsplash.com/photo-1626171875780-3c8ccb3916c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Terrassengestaltung">
                 <figcaption>Terrassengestaltung</figcaption>
             </figure>
         </div>
