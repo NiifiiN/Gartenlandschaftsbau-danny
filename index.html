@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garten & Landschaftsbau bei DF | Professionelle Gartenpflege & Gestaltung</title>
+<meta name="description" content="Professioneller Garten- und Landschaftsbau. Planung, Pflege und Gestaltung von Gärten und Außenanlagen.">
+<style>
+:root {
+  --primary: #21592c;
+  --primary-light: #2d7a3d;
+  --secondary: #d4af37;
+  --dark: #1a3c21;
+  --light: #f4f4f4;
+  --white: #ffffff;
+  --gray: #555;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--light);
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  padding: 0.5rem 1rem;
+  background: rgba(33, 89, 44, 0.95);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  margin-right: 10px;
+  font-size: 1.8rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+
+nav a:hover {
+  color: var(--secondary);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--secondary);
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+main {
+  padding-top: 80px;
+}
+
+section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background: var(--secondary);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card, figure {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 0.5rem 0;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover, figure:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card img, figure img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img, figure:hover img {
+  transform: scale(1.05);
+}
+
+figcaption {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--dark);
+  color: var(--white);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://cdn.pixabay.com/photo/2017/08/30/01/03/garden-2695566_960_720.jpg') center/cover no-repeat;
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeInUp 1s ease;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.hero-content h2::after {
+  display: none;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Contact Form */
+form {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+#formMessage {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax Effect */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  nav {
+    width: 100%;
+    display: none;
+    margin-top: 1rem;
+  }
+  
+  nav.active {
+    display: block;
+  }
+  
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+  }
+  
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Additional Styling */
+.contact-info {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+/* Loading Animation */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <span class="logo-icon">🌿</span>
+      <span>Garten & Landschaftsbau DF</span>
+    </div>
+    <nav id="mainNav">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#bekleidung">Bekleidung</a>
+      <a href="#fahrzeuge">Fahrzeuge</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <button class="hamburger" id="hamburger">☰</button>
+  </div>
+</header>
+
+<main>
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h2>Schöne Gärten. Nachhaltige Landschaften.</h2>
+      <p>Professioneller Garten- und Landschaftsbau — Planung, Pflege und Gestaltung in Ihrer Nähe.</p>
+      <a href="#kontakt" class="btn">Jetzt anfragen</a>
+    </div>
+  </section>
+
+  <section id="leistungen">
+    <h2>Unsere Leistungen</h2>
+    <div class="grid grid-3">
+      <div class="card fade-in">
+        <img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/garden-815428_960_720.jpg" alt="Gartenpflege">
+        <h3>Gartenpflege</h3>
+        <p>Rasenpflege, Hecken schneiden, Pflegekonzepte für Privatgärten und Gewerbeanlagen.</p>
+      </div>
+      <div class="card fade-in">
+        <img src="https://cdn.pixabay.com/photo/2017/06/19/22/25/landscape-2429646_960_720.jpg" alt="Anlagenbau">
+        <h3>Anlagenbau</h3>
+        <p>Wegebau, Terrassen, Pflasterarbeiten, Mauerbau und Gartenbeleuchtung.</p>
+      </div>
+      <div class="card fade-in">
+        <img src="https://cdn.pixabay.com/photo/2016/11/29/10/07/flower-1868854_960_720.jpg" alt="Bepflanzung">
+        <h3>Bepflanzung</h3>
+        <p>Stauden, Hecken, Baumpflanzung und artgerechte Pflege für ein gesundes Pflanzenwachstum.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="bekleidung">
+    <h2>Arbeits- & Freizeitbekleidung</h2>
+    <div class="grid grid-3">
+      <figure class="fade-in">
+        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Crewneck">
+        <figcaption>Crewneck / Pullover</figcaption>
+      </figure>
+      <figure class="fade-in">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="T-Shirt">
+        <figcaption>T-Shirt</figcaption>
+      </figure>
+      <figure class="fade-in">
+        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Jacke">
+        <figcaption>Jacke / Softshell</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="fahrzeuge">
+    <h2>Fahrzeugbranding</h2>
+    <div class="grid grid-3">
+      <figure class="fade-in">
+        <img src="https://cdn.pixabay.com/photo/2014/12/21/23/50/mercedes-575207_960_720.jpg" alt="Sprinter">
+        <figcaption>Mercedes Pritsche</figcaption>
+      </figure>
+      <figure class="fade-in">
+        <img src="https://cdn.pixabay.com/photo/2015/01/21/13/51/mercedes-606856_960_720.jpg" alt="G-Wagen">
+        <figcaption>Geländewagen</figcaption>
+      </figure>
+      <figure class="fade-in">
+        <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Traktor">
+        <figcaption>Traktor & Spezialfahrzeuge</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontaktieren Sie uns</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Ihr Name" required>
+      <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+      <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
+      <button type="submit" class="btn" id="submitBtn">
+        <span class="loading" id="loadingIcon" style="display: none;"></span>
+        <span id="submitText">Nachricht senden</span>
+      </button>
+      <div id="formMessage"></div>
+    </form>
+    <div class="contact-info">
+      <p><strong>Telefon:</strong> <a href="tel:+491711234567">+49 171 1234567</a></p>
+      <p><strong>E-Mail:</strong> <a href="mailto:info@dannyfojut.de">info@dannyfojut.de</a></p>
+      <p><strong>Adresse:</strong> Musterstraße 123, 12345 Musterstadt</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Garten & Landschaftsbau bei DF | Professionelle Gartenpflege & Gestaltung</p>
+</footer>
+
+<script>
+// Header scroll effect
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// Mobile navigation toggle
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('mainNav');
+
+hamburger.addEventListener('click', function() {
+  nav.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    if (window.innerWidth <= 768) {
+      nav.classList.remove('active');
+    }
+  });
+});
+
+// Fade-in animation on scroll
+const fadeElements = document.querySelectorAll('.fade-in');
+
+const fadeInOnScroll = function() {
+  fadeElements.forEach(element => {
+    const elementTop = element.getBoundingClientRect().top;
+    const elementVisible = 150;
+    
+    if (elementTop < window.innerHeight - elementVisible) {
+      element.classList.add('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', fadeInOnScroll);
+// Initial check in case elements are already in view
+fadeInOnScroll();
+
+// Form submission
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const loadingIcon = document.getElementById('loadingIcon');
+const submitText = document.getElementById('submitText');
+const formMessage = document.getElementById('formMessage');
+
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Show loading state
+  loadingIcon.style.display = 'inline-block';
+  submitText.textContent = 'Wird gesendet...';
+  submitBtn.disabled = true;
+  
+  // Simulate form submission (replace with actual form submission)
+  setTimeout(function() {
+    // Reset form
+    contactForm.reset();
+    
+    // Hide loading state
+    loadingIcon.style.display = 'none';
+    submitText.textContent = 'Nachricht senden';
+    submitBtn.disabled = false;
+    
+    // Show success message
+    formMessage.textContent = 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.';
+    formMessage.className = 'success';
+    
+    // Hide message after 5 seconds
+    setTimeout(function() {
+      formMessage.textContent = '';
+      formMessage.className = '';
+    }, 5000);
+  }, 2000);
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
