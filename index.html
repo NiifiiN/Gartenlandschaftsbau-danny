@@ -208,12 +208,32 @@
             color: var(--white);
         }
 
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+
         .grid {
             display: grid;
             gap: 1.5rem;
         }
 
         .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .grid-2 {
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
@@ -328,6 +348,90 @@
             transform: translateY(0);
         }
 
+        /* Legal Pages */
+        .legal-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+
+        .legal-content h3 {
+            margin-top: 2rem;
+            color: var(--primary);
+        }
+
+        .legal-content h3:first-child {
+            margin-top: 0;
+        }
+
+        /* Job Listings */
+        .job-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .job-tag {
+            background: var(--light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .job-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .requirements-list {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .requirements-list li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .requirements-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
         /* Mobile Navigation */
         @media (max-width: 768px) {
             .header-container {
@@ -368,6 +472,11 @@
             
             section {
                 padding: 2rem 1rem;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
 
@@ -528,6 +637,7 @@
             <a href="#ueber-uns">Über uns</a>
             <a href="#leistungen">Leistungen</a>
             <a href="#referenzen">Referenzen</a>
+            <a href="#karriere">Karriere</a>
             <a href="#kontakt">Kontakt</a>
         </nav>
         <button class="hamburger" id="hamburger">☰</button>
@@ -603,7 +713,7 @@
         </div>
         
         <h2 style="margin-top: 4rem;">Unsere Projekte</h2>
-        <div class="grid grid-3">
+        <div class="grid grid-2">
             <figure class="fade-in">
                 <img src="https://i.imgur.com/3OPwA0l.jpeg" alt="Terrassengestaltung">
                 <figcaption>Terrassengestaltung</figcaption>
@@ -612,10 +722,104 @@
                 <img src="https://i.imgur.com/2T9L01j.jpeg" alt="Naturgarten">
                 <figcaption>Naturnaher Garten</figcaption>
             </figure>
-            <figure class="fade-in">
-                <img src="https://images.unsplash.com/photo-1626171875780-3c8ccb3916c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Moderner Garten">
-                <figcaption>Moderner Garten</figcaption>
-            </figure>
+        </div>
+    </section>
+
+    <section id="karriere">
+        <h2>Karriere bei DF</h2>
+        <p style="text-align: center; margin-bottom: 3rem;">Werden Sie Teil unseres engagierten Teams und gestalten Sie mit uns die Gärten von morgen!</p>
+        
+        <div class="job-card fade-in">
+            <div class="job-header">
+                <h3 class="job-title">Gartenbau-Helfer (m/w/d)</h3>
+            </div>
+            <div class="job-meta">
+                <span class="job-tag">Vollzeit/Teilzeit</span>
+                <span class="job-tag">Ausbildung möglich</span>
+                <span class="job-tag">Sofortiger Start</span>
+            </div>
+            <div class="job-description">
+                <p>Wir suchen motivierte Gartenbau-Helfer zur Unterstützung unseres Teams bei vielfältigen Gartenarbeiten. Die perfekte Stelle für Quereinsteiger und naturbegeisterte Menschen!</p>
+            </div>
+            <h4>Ihre Aufgaben:</h4>
+            <ul class="requirements-list">
+                <li>Unterstützung bei Gartenpflege und -gestaltung</li>
+                <li>Rasenpflege und Heckenschnitt</li>
+                <li>Bepflanzungsarbeiten und Unkrautentfernung</li>
+                <li>Pflege von Gartengeräten und -maschinen</li>
+                <li>Mithilfe bei größeren Landschaftsbauprojekten</li>
+            </ul>
+            <h4>Das bringen Sie mit:</h4>
+            <ul class="requirements-list">
+                <li>Freude an praktischer Arbeit im Freien</li>
+                <li>Körperliche Belastbarkeit und Teamgeist</li>
+                <li>Grundverständnis für Pflanzen und Gartenarbeit</li>
+                <li>Führerschein Klasse B von Vorteil</li>
+                <li>Bereitschaft zur Weiterbildung</li>
+            </ul>
+            <a href="#kontakt" class="btn">Jetzt bewerben</a>
+        </div>
+
+        <div class="job-card fade-in">
+            <div class="job-header">
+                <h3 class="job-title">Baggerfahrer (m/w/d)</h3>
+            </div>
+            <div class="job-meta">
+                <span class="job-tag">Vollzeit</span>
+                <span class="job-tag">Erfahrung erforderlich</span>
+                <span class="job-tag">Attraktives Gehalt</span>
+            </div>
+            <div class="job-description">
+                <p>Für unser Team suchen wir einen erfahrenen Baggerfahrer zur Durchführung von Erdbewegungen und Landschaftsgestaltungen.</p>
+            </div>
+            <h4>Ihre Aufgaben:</h4>
+            <ul class="requirements-list">
+                <li>Selbstständiges Arbeiten mit Minibaggern und Radladern</li>
+                <li>Erdbewegungen und Geländemodellierungen</li>
+                <li>Mitarbeit bei Terrassierungen und Wegebau</li>
+                <li>Einbau von Drainagen und Verlegarbeiten</li>
+                <li>Wartung und Pflege der Baumaschinen</li>
+            </ul>
+            <h4>Das bringen Sie mit:</h4>
+            <ul class="requirements-list">
+                <li>Abgeschlossene Ausbildung im Tief- oder Landschaftsbau</li>
+                <li>Mehrjährige Erfahrung als Baggerfahrer</li>
+                <li>Kenntnisse in Erdbewegung und Geländemodellierung</li>
+                <li>Führerschein Klasse L oder T</li>
+                <li>Sorgfältige und präzise Arbeitsweise</li>
+            </ul>
+            <a href="#kontakt" class="btn">Jetzt bewerben</a>
+        </div>
+
+        <div class="job-card fade-in">
+            <div class="job-header">
+                <h3 class="job-title">Social Media Manager (m/w/d)</h3>
+            </div>
+            <div class="job-meta">
+                <span class="job-tag">Teilzeit/Vollzeit</span>
+                <span class="job-tag">Homeoffice möglich</span>
+                <span class="job-tag">Kreative Gestaltung</span>
+            </div>
+            <div class="job-description">
+                <p>Wir suchen eine kreative Persönlichkeit zur Betreuung unserer Social-Media-Kanäle und zur Steigerung unserer Online-Präsenz.</p>
+            </div>
+            <h4>Ihre Aufgaben:</h4>
+            <ul class="requirements-list">
+                <li>Konzeption und Umsetzung unserer Social-Media-Strategie</li>
+                <li>Erstellung von ansprechenden Inhalten (Fotos, Videos, Texte)</li>
+                <li>Community Management und Kundenkommunikation</li>
+                <li>Durchführung von Werbekampagnen</li>
+                <li>Monitoring und Analyse der Social-Media-Performance</li>
+            </ul>
+            <h4>Das bringen Sie mit:</h4>
+            <ul class="requirements-list">
+                <li>Erfahrung in Social-Media-Management</li>
+                <li>Kreativität und Affinität zu visuellen Inhalten</li>
+                <li>Gute Kenntnisse von Instagram, Facebook, Pinterest</li>
+                <li>Erfahrung mit Content-Erstellung und Bildbearbeitung</li>
+                <li>Selbstständige und organisierte Arbeitsweise</li>
+            </ul>
+            <a href="#kontakt" class="btn">Jetzt bewerben</a>
         </div>
     </section>
 
@@ -625,10 +829,10 @@
             <input type="text" name="name" placeholder="Ihr Name" required>
             <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
             <input type="tel" name="phone" placeholder="Ihre Telefonnummer">
-            <textarea name="message" rows="5" placeholder="Beschreiben Sie Ihr Projekt..." required></textarea>
+            <textarea name="message" rows="5" placeholder="Beschreiben Sie Ihr Projekt oder Ihre Bewerbung..." required></textarea>
             <button type="submit" class="btn" id="submitBtn">
                 <span class="loading" id="loadingIcon" style="display: none;"></span>
-                <span id="submitText">Anfrage senden</span>
+                <span id="submitText">Nachricht senden</span>
             </button>
             <div id="formMessage"></div>
         </form>
@@ -646,7 +850,61 @@
 
 <footer>
     <p>© 2025 Garten & Landschaftsbau bei DF | Reingeguckt Str. 187, 24145 Kiel | Tel: +49 171 1234567</p>
+    <div class="footer-links">
+        <a href="#impressum" onclick="showImpressum()">Impressum</a>
+        <a href="#datenschutz" onclick="showDatenschutz()">Datenschutz</a>
+    </div>
 </footer>
+
+<!-- Impressum Modal -->
+<div id="impressumModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; padding: 2rem; overflow-y: auto;">
+    <div style="background: white; max-width: 800px; margin: 2rem auto; padding: 2rem; border-radius: 10px; position: relative;">
+        <button onclick="hideImpressum()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer;">×</button>
+        <h2>Impressum</h2>
+        <div class="legal-content">
+            <h3>Angaben gemäß § 5 TMG</h3>
+            <p><strong>Garten & Landschaftsbau DF</strong><br>
+            Musterstraße 123<br>
+            24145 Kiel</p>
+
+            <h3>Kontakt</h3>
+            <p>Telefon: +49 (0) 171 1234567<br>
+            E-Mail: info@dannyfojut.de</p>
+
+            <h3>Umsatzsteuer-ID</h3>
+            <p>Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br>
+            DE 123 456 789</p>
+
+            <h3>Berufsbezeichnung und berufsrechtliche Regelungen</h3>
+            <p>Berufsbezeichnung: Gärtner im Garten- und Landschaftsbau</p>
+
+            <p><em>Dies ist eine private Musterseite und wird nicht veröffentlicht.</em></p>
+        </div>
+    </div>
+</div>
+
+<!-- Datenschutz Modal -->
+<div id="datenschutzModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; padding: 2rem; overflow-y: auto;">
+    <div style="background: white; max-width: 800px; margin: 2rem auto; padding: 2rem; border-radius: 10px; position: relative;">
+        <button onclick="hideDatenschutz()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer;">×</button>
+        <h2>Datenschutzerklärung</h2>
+        <div class="legal-content">
+            <h3>1. Datenschutz auf einen Blick</h3>
+            <p>Diese Website dient ausschließlich privaten Zwecken und wird nicht veröffentlicht. Es werden keine personenbezogenen Daten erhoben oder verarbeitet.</p>
+
+            <h3>2. Hosting</h3>
+            <p>Diese Seite wird lokal gehostet und nicht auf einem externen Server veröffentlicht.</p>
+
+            <h3>3. Allgemeine Hinweise und Pflichtinformationen</h3>
+            <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften.</p>
+
+            <h3>4. Datenerfassung auf dieser Website</h3>
+            <p>Es findet keine Datenerfassung statt. Das Kontaktformular dient Demonstrationszwecken.</p>
+
+            <p><em>Dies ist eine private Musterseite und wird nicht veröffentlicht.</em></p>
+        </div>
+    </div>
+</div>
 
 <script>
     // Header scroll effect
@@ -717,11 +975,11 @@
             
             // Hide loading state
             loadingIcon.style.display = 'none';
-            submitText.textContent = 'Anfrage senden';
+            submitText.textContent = 'Nachricht senden';
             submitBtn.disabled = false;
             
             // Show success message
-            formMessage.textContent = 'Vielen Dank für Ihre Anfrage! Wir melden uns innerhalb von 24 Stunden bei Ihnen.';
+            formMessage.textContent = 'Vielen Dank für Ihre Nachricht! Wir melden uns innerhalb von 24 Stunden bei Ihnen.';
             formMessage.className = 'success';
             
             // Hide message after 5 seconds
@@ -748,6 +1006,33 @@
                 });
             }
         });
+    });
+
+    // Legal modals
+    function showImpressum() {
+        document.getElementById('impressumModal').style.display = 'block';
+    }
+
+    function hideImpressum() {
+        document.getElementById('impressumModal').style.display = 'none';
+    }
+
+    function showDatenschutz() {
+        document.getElementById('datenschutzModal').style.display = 'block';
+    }
+
+    function hideDatenschutz() {
+        document.getElementById('datenschutzModal').style.display = 'none';
+    }
+
+    // Close modals when clicking outside
+    window.addEventListener('click', function(e) {
+        if (e.target.id === 'impressumModal') {
+            hideImpressum();
+        }
+        if (e.target.id === 'datenschutzModal') {
+            hideDatenschutz();
+        }
     });
 
     // Add some interactive elements
