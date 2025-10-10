@@ -623,7 +623,267 @@
             color: var(--gray);
             font-size: 0.9rem;
         }
+
+        /* CHATBOT STYLES */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .chatbot-button {
+            background-color: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .chatbot-button:hover {
+            background-color: var(--primary-light);
+            transform: scale(1.05);
+        }
+        
+        .chatbot-button i {
+            font-size: 24px;
+        }
+        
+        .chatbot-window {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .chatbot-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .chatbot-header h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            color: white;
+        }
+        
+        .status-indicator {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #4caf50;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #f9f9f9;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 12px 15px;
+            border-radius: 18px;
+            line-height: 1.4;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .bot-message {
+            align-self: flex-start;
+            background-color: #e8f5e9;
+            color: #333;
+            border-bottom-left-radius: 5px;
+            border: 1px solid #c8e6c9;
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            background-color: var(--primary);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .quick-reply {
+            background-color: white;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quick-reply:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .chatbot-input-container {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            background: white;
+        }
+        
+        .chatbot-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+        
+        .send-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.2s;
+        }
+        
+        .send-button:hover {
+            background-color: var(--primary-light);
+        }
+        
+        .typing-indicator {
+            display: none;
+            align-self: flex-start;
+            background-color: #e8f5e9;
+            padding: 12px 15px;
+            border-radius: 18px;
+            border-bottom-left-radius: 5px;
+            border: 1px solid #c8e6c9;
+        }
+        
+        .typing-dots {
+            display: flex;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+        
+        .service-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .service-option {
+            background-color: white;
+            border: 1px solid var(--secondary);
+            color: var(--dark);
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .service-option:hover {
+            background-color: #fff9e6;
+        }
+        
+        .chatbot-close {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .chatbot-window {
+                width: 300px;
+                height: 450px;
+            }
+            
+            .chatbot-container {
+                bottom: 10px;
+                right: 10px;
+            }
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -906,6 +1166,49 @@
     </div>
 </div>
 
+<!-- CHATBOT -->
+<div class="chatbot-container">
+    <div class="chatbot-button" id="chatbotButton">
+        <i class="fas fa-comments"></i>
+    </div>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <button class="chatbot-close" id="chatbotClose">&times;</button>
+            <h3>Gartenbau Service</h3>
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>Online</span>
+            </div>
+        </div>
+        
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                Hallo! Ich bin Ihr digitaler Assistent für Garten- und Landschaftsbau. Wie kann ich Ihnen helfen?
+                <div class="quick-replies">
+                    <div class="quick-reply" onclick="handleQuickReply('Angebot anfragen')">Angebot anfragen</div>
+                    <div class="quick-reply" onclick="handleQuickReply('Leistungen')">Unsere Leistungen</div>
+                    <div class="quick-reply" onclick="handleQuickReply('Kontakt')">Kontakt</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="typing-dots">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+        
+        <div class="chatbot-input-container">
+            <input type="text" class="chatbot-input" id="userInput" placeholder="Schreiben Sie eine Nachricht..." onkeypress="handleKeyPress(event)">
+            <button class="send-button" onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
 <script>
     // Header scroll effect
     window.addEventListener('scroll', function() {
@@ -1048,6 +1351,158 @@
             });
         });
     });
+
+    // CHATBOT FUNKTIONALITÄT
+    // Chatbot-Konfiguration
+    const botResponses = {
+        "default": "Vielen Dank für Ihre Nachricht. Ein Mitarbeiter wird sich bald bei Ihnen melden. In der Zwischenzeit kann ich Ihnen vielleicht mit folgenden Themen helfen:",
+        "begrüßung": "Hallo! Ich bin Ihr digitaler Assistent für Garten- und Landschaftsbau. Wie kann ich Ihnen helfen?",
+        "leistungen": "Wir bieten folgende Dienstleistungen an:\n\n• Gartenplanung & -gestaltung\n• Pflasterarbeiten & Wegebau\n• Teich- & Bachlaufbau\n• Bepflanzung & Rasenverlegung\n• Baumpflege & -fällung\n• Beleuchtung & Bewässerung\n• Zaunbau & Sichtschutz\n• Winterdienst & Pflege",
+        "angebot": "Gerne erstellen wir Ihnen ein unverbindliches Angebot. Bitte teilen Sie mir mit, um welche Dienstleistung es sich handelt und wie groß die Fläche ungefähr ist.",
+        "kontakt": "Sie können uns wie folgt erreichen:\n\n📞 Telefon: +49 171 1234567\n📧 E-Mail: info@dannyfojut.de\n🏢 Adresse: Reingeguckt Str. 187, 24145 Kiel\n\nMo-Fr: 8:00-18:00 Uhr\nSa: 9:00-14:00 Uhr",
+        "notfall": "Für dringende Gartennotfälle (z.B. umgestürzte Bäume) erreichen Sie unseren Notdienst unter +49 171 1234567 (24/7).",
+        "preise": "Die Preise variieren je nach Aufwand und Material. Für eine genaue Preisangabe benötigen wir Details zu Ihrem Projekt. Möchten Sie ein unverbindliches Angebot?",
+        "termin": "Gerne vereinbaren wir einen Termin für eine kostenlose Beratung vor Ort. Bitte nennen Sie mir Ihren Wunschtermin.",
+        "danke": "Gern geschehen! Kann ich Ihnen noch mit etwas anderem helfen?",
+        "karriere": "Wir suchen immer motivierte Mitarbeiter! Aktuelle Stellenangebote finden Sie auf unserer Karriere-Seite. Möchten Sie sich bewerben?",
+        "öffnungszeiten": "Unsere Öffnungszeiten:\nMo-Fr: 8:00-18:00 Uhr\nSa: 9:00-14:00 Uhr\n\nTermine außerhalb dieser Zeiten sind nach Vereinbarung möglich."
+    };
+
+    // DOM-Elemente
+    const chatbotButton = document.getElementById('chatbotButton');
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const chatbotClose = document.getElementById('chatbotClose');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const userInput = document.getElementById('userInput');
+    const typingIndicator = document.getElementById('typingIndicator');
+
+    // Chatbot öffnen/schließen
+    chatbotButton.addEventListener('click', () => {
+        chatbotWindow.style.display = 'flex';
+    });
+
+    chatbotClose.addEventListener('click', () => {
+        chatbotWindow.style.display = 'none';
+    });
+
+    // Nachricht vom Benutzer senden
+    function sendMessage() {
+        const message = userInput.value.trim();
+        if (message === '') return;
+        
+        addMessage(message, 'user');
+        userInput.value = '';
+        
+        // Bot-Antwort nach kurzer Verzögerung
+        setTimeout(() => {
+            typingIndicator.style.display = 'block';
+            scrollToBottom();
+            
+            setTimeout(() => {
+                typingIndicator.style.display = 'none';
+                const response = generateBotResponse(message);
+                addMessage(response.message, 'bot', response.options);
+                scrollToBottom();
+            }, 1500);
+        }, 500);
+    }
+
+    // Schnellantwort verarbeiten
+    function handleQuickReply(text) {
+        userInput.value = text;
+        sendMessage();
+    }
+
+    // Enter-Taste zum Senden
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    }
+
+    // Nachricht zum Chat hinzufügen
+    function addMessage(text, sender, options = null) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}-message`;
+        
+        // Ersetze Zeilenumbrüche mit <br> Tags
+        const formattedText = text.replace(/\n/g, '<br>');
+        messageDiv.innerHTML = formattedText;
+        
+        if (options && sender === 'bot') {
+            const optionsDiv = document.createElement('div');
+            optionsDiv.className = 'quick-replies';
+            
+            options.forEach(option => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'quick-reply';
+                optionDiv.textContent = option;
+                optionDiv.onclick = () => handleQuickReply(option);
+                optionsDiv.appendChild(optionDiv);
+            });
+            
+            messageDiv.appendChild(optionsDiv);
+        }
+        
+        chatbotMessages.appendChild(messageDiv);
+        scrollToBottom();
+    }
+
+    // Bot-Antwort generieren
+    function generateBotResponse(userMessage) {
+        const lowerMessage = userMessage.toLowerCase();
+        let response = botResponses.default;
+        let options = ['Angebot anfragen', 'Leistungen', 'Kontakt'];
+        
+        if (lowerMessage.includes('hallo') || lowerMessage.includes('guten tag') || lowerMessage.includes('hi')) {
+            response = botResponses.begrüßung;
+            options = ['Angebot anfragen', 'Leistungen', 'Kontakt'];
+        } else if (lowerMessage.includes('leistung') || lowerMessage.includes('dienstleistung') || lowerMessage.includes('service')) {
+            response = botResponses.leistungen;
+            options = ['Angebot anfragen', 'Termin vereinbaren', 'Preise'];
+        } else if (lowerMessage.includes('angebot') || lowerMessage.includes('preis') || lowerMessage.includes('kosten')) {
+            response = botResponses.angebot;
+            options = ['Gartenplanung', 'Pflasterarbeiten', 'Bepflanzung', 'Baumpflege'];
+        } else if (lowerMessage.includes('kontakt') || lowerMessage.includes('telefon') || lowerMessage.includes('adresse')) {
+            response = botResponses.kontakt;
+            options = ['Termin vereinbaren', 'Notfall', 'Öffnungszeiten'];
+        } else if (lowerMessage.includes('notfall') || lowerMessage.includes('dringend')) {
+            response = botResponses.notfall;
+            options = ['Kontakt', 'Zurück zum Anfang'];
+        } else if (lowerMessage.includes('termin') || lowerMessage.includes('beratung')) {
+            response = botResponses.termin;
+            options = ['Diese Woche', 'Nächste Woche', 'Später'];
+        } else if (lowerMessage.includes('danke')) {
+            response = botResponses.danke;
+            options = ['Weitere Hilfe', 'Kontakt', 'Beenden'];
+        } else if (lowerMessage.includes('karriere') || lowerMessage.includes('stellen') || lowerMessage.includes('bewerbung')) {
+            response = botResponses.karriere;
+            options = ['Jobs anzeigen', 'Kontakt', 'Zurück'];
+        } else if (lowerMessage.includes('öffnungszeit') || lowerMessage.includes('öffnung')) {
+            response = botResponses.öffnungszeiten;
+            options = ['Termin vereinbaren', 'Kontakt', 'Zurück'];
+        }
+        
+        return {
+            message: response,
+            options: options
+        };
+    }
+
+    // Nach unten scrollen
+    function scrollToBottom() {
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Initialisierung
+    window.onload = function() {
+        // Fokus auf Input setzen, wenn Chatbot geöffnet wird
+        chatbotButton.addEventListener('click', () => {
+            setTimeout(() => {
+                userInput.focus();
+            }, 300);
+        });
+    };
 </script>
 
 </body>
